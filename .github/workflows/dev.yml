@@ -20,11 +20,6 @@ jobs:
       - name: Install dependencies
         run: npm i --legacy-peer-deps --omit=dev
 
-      - name: Build
-        run: npm run build
-        env:
-          NODE_ENV: production
-
       - name: Deploy to Lambda
         uses: serverless/github-action@v3.2
         with:
