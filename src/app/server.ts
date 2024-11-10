@@ -5,7 +5,6 @@ const app: Application = express();
 
 // @ts-expect-error
 app.get('/api/ping', (_req: Request, res: Response) => {
-  console.log(Object.keys(process.env));
   return res.json({
     success: true,
     message: 'Endpoint is working ' + process.env.APP_KEY,
