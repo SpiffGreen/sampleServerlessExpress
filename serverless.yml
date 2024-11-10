@@ -36,5 +36,5 @@ build:
 plugins:
   - serverless-plugin-typescript
   - serverless-offline
-  - serverless-ssm-fetch
+  # - serverless-ssm-fetch
   # - serverless-layers # Helps reduce deployment time study later
