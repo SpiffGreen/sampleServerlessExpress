@@ -16,6 +16,8 @@ functions:
     handler: src/app/server.handler
     events:
       - httpApi: '*'
+    environment:
+      APP_KEY: ${ssm:/b4b-api/${self:provider.stage}/APP_KEY}
 # package:
 #   individually: true
 #   excludeDevDependencies: false
@@ -25,8 +27,6 @@ custom:
   serverless-offline:
     allowCache: true
     httpPort: 4000
-  serverlessSsmFetch:
-    APP_KEY: /b4b-api/${self:provider.stage}/APP_KEY
   serverless-layers:
     layersDeploymentBucket: b4b-node-modules
     customInstallationCommand: npm install --legacy-peer-deps
