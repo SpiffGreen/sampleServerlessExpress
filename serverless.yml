@@ -1,8 +1,9 @@
 service: b4b
+frameworkVersion: '4'
 provider:
   name: aws
   region: 'eu-west-3'
-  runtime: nodejs18.x
+  runtime: nodejs20.x
   stage: ${opt:stage,'dev'}
   timeout: 60
   environment:
@@ -46,7 +47,7 @@ custom:
     # TWITCH_REDIRECT_URL: /b4b-api/${self:provider.stage}/TWITCH_REDIRECT_URL
   serverless-layers:
     layersDeploymentBucket: b4b-node-modules
-    customInstallationCommand: npm install --omit=dev
+    customInstallationCommand: npm install --legacy-peer-deps
 useDotenv: true
 build:
   esbuild: false
