@@ -16,11 +16,11 @@ functions:
     handler: src/app/server.handler
     events:
       - httpApi: '*'
-package:
-  individually: true
-  excludeDevDependencies: false
-  exclude:
-    - 'node_modules/**'
+# package:
+#   individually: true
+#   excludeDevDependencies: false
+#   exclude:
+#     - 'node_modules/**'
 custom:
   serverless-offline:
     allowCache: true
