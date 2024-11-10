@@ -17,7 +17,7 @@ functions:
     events:
       - httpApi: '*'
     environment:
-      APP_KEY: ${ssm:/b4b-api/${self:provider.stage}/APP_KEY}
+      APP_KEY: ${ssm:/b4b-api/dev~true}
 # package:
 #   individually: true
 #   excludeDevDependencies: false
