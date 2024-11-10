@@ -7,7 +7,7 @@ const app: Application = express();
 app.get('/api/ping', (_req: Request, res: Response) => {
   return res.json({
     success: true,
-    message: 'Endpoint is working',
+    message: 'Endpoint is working ' + process.env.APP_KEY,
   });
 });
 

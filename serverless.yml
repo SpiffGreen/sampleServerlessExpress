@@ -25,26 +25,8 @@ custom:
   serverless-offline:
     allowCache: true
     httpPort: 4000
-    # useChildProcesses: true
   serverlessSsmFetch:
-    # APP_KEY: /b4b-api/${self:provider.stage}/APP_KEY
-    # BUGSNAG: /b4b-api/${self:provider.stage}/BUGSNAG
-    # ENCRYPTION_KEY: /b4b-api/${self:provider.stage}/ENCRYPTION_KEY
-    # STRIPE_SECRET_KEY: /b4b-api/${self:provider.stage}/STRIPE_SECRET_KEY
-    # JWT_SECRET: /b4b-api/${self:provider.stage}/JWT_SECRET
-    # MONGO_URL: /b4b-api/${self:provider.stage}/MONGO_URL
-    # REFRESH_SECRET: /b4b-api/${self:provider.stage}/REFRESH_SECRET
-    # MAILGUN_DOMAIN: /b4b-api/${self:provider.stage}/MAILGUN_DOMAIN
-    # MAILGUN_API_KEY: /b4b-api/${self:provider.stage}/MAILGUN_API_KEY
-    # SJ_AWS_ACCESS_KEY_ID: /b4b-api/${self:provider.stage}/AWS_ACCESS_KEY_ID
-    # SJ_AWS_SECRET_ACCESS_KEY: /b4b-api/${self:provider.stage}/AWS_SECRET_ACCESS_KEY
-    # TWITTER_APP_KEY: /b4b-api/${self:provider.stage}/TWITTER_APP_KEY
-    # TWITTER_APP_SECRET: /b4b-api/${self:provider.stage}/TWITTER_APP_SECRET
-    # TWITTER_APP_ACCESS_TOKEN: /b4b-api/${self:provider.stage}/TWITTER_APP_ACCESS_TOKEN
-    # TWITTER_APP_ACCESS_SECRET: /b4b-api/${self:provider.stage}/TWITTER_APP_ACCESS_SECRET
-    # TWITCH_CLIENT_ID: /b4b-api/${self:provider.stage}/TWITCH_CLIENT_ID
-    # TWITCH_CLIENT_SECRET: /b4b-api/${self:provider.stage}/TWITCH_SECRET
-    # TWITCH_REDIRECT_URL: /b4b-api/${self:provider.stage}/TWITCH_REDIRECT_URL
+    APP_KEY: /b4b-api/${self:provider.stage}/APP_KEY
   serverless-layers:
     layersDeploymentBucket: b4b-node-modules
     customInstallationCommand: npm install --legacy-peer-deps
@@ -54,3 +36,5 @@ build:
 plugins:
   - serverless-plugin-typescript
   - serverless-offline
+  - serverless-ssm-fetch
+  # - serverless-layers # Helps reduce deployment time study later
